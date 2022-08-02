@@ -1,0 +1,6076 @@
+basePath: /
+definitions:
+  doc.Approval:
+    properties:
+      created:
+        $ref: '#/definitions/doc.CreatedUpdated'
+      id:
+        format: uuid
+        type: string
+      name:
+        example: Fulan
+        type: string
+      updated:
+        $ref: '#/definitions/doc.CreatedUpdated'
+    type: object
+  doc.ApprovalList:
+    properties:
+      count:
+        example: 1
+        type: integer
+      page_context:
+        $ref: '#/definitions/doc.PageContext'
+      results:
+        items:
+          $ref: '#/definitions/doc.Approval'
+        type: array
+    type: object
+  doc.ApprovalRequest:
+    properties:
+      created:
+        $ref: '#/definitions/doc.CreatedUpdated'
+      id:
+        format: uuid
+        type: string
+      name:
+        example: Fulan
+        type: string
+      updated:
+        $ref: '#/definitions/doc.CreatedUpdated'
+    type: object
+  doc.ApprovalRequestList:
+    properties:
+      count:
+        example: 1
+        type: integer
+      page_context:
+        $ref: '#/definitions/doc.PageContext'
+      results:
+        items:
+          $ref: '#/definitions/doc.ApprovalRequest'
+        type: array
+    type: object
+  doc.BadRequest:
+    properties:
+      error:
+        properties:
+          code:
+            example: 400
+            type: integer
+          message:
+            example: A validation exception occurred.
+            type: string
+        type: object
+    type: object
+  doc.Branch:
+    properties:
+      code:
+        example: J-0001
+        type: string
+      created:
+        $ref: '#/definitions/doc.CreatedUpdated'
+      department:
+        $ref: '#/definitions/doc.DepartmentSummary'
+      departments:
+        items:
+          $ref: '#/definitions/doc.DepartmentSummary'
+        type: array
+      id:
+        format: uuid
+        type: string
+      is_active:
+        type: boolean
+      name:
+        example: Jakarta
+        type: string
+      updated:
+        $ref: '#/definitions/doc.CreatedUpdated'
+    type: object
+  doc.BranchList:
+    properties:
+      count:
+        example: 1
+        type: integer
+      page_context:
+        $ref: '#/definitions/doc.PageContext'
+      results:
+        items:
+          $ref: '#/definitions/doc.Branch'
+        type: array
+    type: object
+  doc.BranchSummary:
+    properties:
+      code:
+        example: J-0001
+        type: string
+      id:
+        format: uuid
+        type: string
+      name:
+        example: Jakarta
+        type: string
+    type: object
+  doc.CreatedUpdated:
+    properties:
+      time:
+        format: date-time
+        type: string
+      user:
+        $ref: '#/definitions/doc.CreatedUpdatedUser'
+    type: object
+  doc.CreatedUpdatedUser:
+    properties:
+      email:
+        example: user@email.com
+        type: string
+      id:
+        format: uuid
+        type: string
+      name:
+        example: Fulan
+        type: string
+    type: object
+  doc.Deleted:
+    properties:
+      code:
+        example: 200
+        type: integer
+      message:
+        example: Data has been deleted
+        type: string
+    type: object
+  doc.Department:
+    properties:
+      branch:
+        $ref: '#/definitions/doc.BranchSummary'
+      branches:
+        items:
+          $ref: '#/definitions/doc.BranchSummary'
+        type: array
+      code:
+        example: M-0001
+        type: string
+      created:
+        $ref: '#/definitions/doc.CreatedUpdated'
+      id:
+        format: uuid
+        type: string
+      is_active:
+        type: boolean
+      name:
+        example: Marketing
+        type: string
+      parent:
+        $ref: '#/definitions/doc.DepartmentSummary'
+      updated:
+        $ref: '#/definitions/doc.CreatedUpdated'
+    type: object
+  doc.DepartmentList:
+    properties:
+      count:
+        example: 1
+        type: integer
+      page_context:
+        $ref: '#/definitions/doc.PageContext'
+      results:
+        items:
+          $ref: '#/definitions/doc.Department'
+        type: array
+    type: object
+  doc.DepartmentSummary:
+    properties:
+      code:
+        example: M-0001
+        type: string
+      id:
+        format: uuid
+        type: string
+      name:
+        example: Marketing
+        type: string
+    type: object
+  doc.Employee:
+    properties:
+      created:
+        $ref: '#/definitions/doc.CreatedUpdated'
+      gender:
+        description: male or female
+        enum:
+        - male
+        - female
+        example: male
+        type: string
+      id:
+        format: uuid
+        type: string
+      name:
+        example: Fulan
+        type: string
+      updated:
+        $ref: '#/definitions/doc.CreatedUpdated'
+    type: object
+  doc.EmployeeBankAccount:
+    properties:
+      created:
+        $ref: '#/definitions/doc.CreatedUpdated'
+      id:
+        format: uuid
+        type: string
+      name:
+        example: Fulan
+        type: string
+      updated:
+        $ref: '#/definitions/doc.CreatedUpdated'
+    type: object
+  doc.EmployeeBankAccountList:
+    properties:
+      count:
+        example: 1
+        type: integer
+      page_context:
+        $ref: '#/definitions/doc.PageContext'
+      results:
+        items:
+          $ref: '#/definitions/doc.EmployeeBankAccount'
+        type: array
+    type: object
+  doc.EmployeeClass:
+    properties:
+      created:
+        $ref: '#/definitions/doc.CreatedUpdated'
+      id:
+        format: uuid
+        type: string
+      name:
+        example: Fulan
+        type: string
+      updated:
+        $ref: '#/definitions/doc.CreatedUpdated'
+    type: object
+  doc.EmployeeClassList:
+    properties:
+      count:
+        example: 1
+        type: integer
+      page_context:
+        $ref: '#/definitions/doc.PageContext'
+      results:
+        items:
+          $ref: '#/definitions/doc.EmployeeClass'
+        type: array
+    type: object
+  doc.EmployeeGrade:
+    properties:
+      created:
+        $ref: '#/definitions/doc.CreatedUpdated'
+      id:
+        format: uuid
+        type: string
+      name:
+        example: Fulan
+        type: string
+      updated:
+        $ref: '#/definitions/doc.CreatedUpdated'
+    type: object
+  doc.EmployeeGradeList:
+    properties:
+      count:
+        example: 1
+        type: integer
+      page_context:
+        $ref: '#/definitions/doc.PageContext'
+      results:
+        items:
+          $ref: '#/definitions/doc.EmployeeGrade'
+        type: array
+    type: object
+  doc.EmployeeHistory:
+    properties:
+      created:
+        $ref: '#/definitions/doc.CreatedUpdated'
+      id:
+        format: uuid
+        type: string
+      name:
+        example: Fulan
+        type: string
+      updated:
+        $ref: '#/definitions/doc.CreatedUpdated'
+    type: object
+  doc.EmployeeHistoryList:
+    properties:
+      count:
+        example: 1
+        type: integer
+      page_context:
+        $ref: '#/definitions/doc.PageContext'
+      results:
+        items:
+          $ref: '#/definitions/doc.EmployeeHistory'
+        type: array
+    type: object
+  doc.EmployeeList:
+    properties:
+      count:
+        example: 1
+        type: integer
+      page_context:
+        $ref: '#/definitions/doc.PageContext'
+      results:
+        items:
+          $ref: '#/definitions/doc.Employee'
+        type: array
+    type: object
+  doc.EmployeePayrollComponent:
+    properties:
+      created:
+        $ref: '#/definitions/doc.CreatedUpdated'
+      id:
+        format: uuid
+        type: string
+      name:
+        example: Fulan
+        type: string
+      updated:
+        $ref: '#/definitions/doc.CreatedUpdated'
+    type: object
+  doc.EmployeePayrollComponentList:
+    properties:
+      count:
+        example: 1
+        type: integer
+      page_context:
+        $ref: '#/definitions/doc.PageContext'
+      results:
+        items:
+          $ref: '#/definitions/doc.EmployeePayrollComponent'
+        type: array
+    type: object
+  doc.EmploymentStatus:
+    properties:
+      code:
+        example: CT
+        type: string
+      created:
+        $ref: '#/definitions/doc.CreatedUpdated'
+      id:
+        format: uuid
+        type: string
+      is_active:
+        type: boolean
+      name:
+        example: Contract
+        type: string
+      updated:
+        $ref: '#/definitions/doc.CreatedUpdated'
+    type: object
+  doc.EmploymentStatusList:
+    properties:
+      count:
+        example: 1
+        type: integer
+      page_context:
+        $ref: '#/definitions/doc.PageContext'
+      results:
+        items:
+          $ref: '#/definitions/doc.EmploymentStatus'
+        type: array
+    type: object
+  doc.Forbidden:
+    properties:
+      error:
+        properties:
+          code:
+            example: 401
+            type: integer
+          message:
+            example: User doesn't have permission to access the resource.
+            type: string
+        type: object
+    type: object
+  doc.HealthInsurance:
+    properties:
+      created:
+        $ref: '#/definitions/doc.CreatedUpdated'
+      id:
+        format: uuid
+        type: string
+      name:
+        example: Fulan
+        type: string
+      updated:
+        $ref: '#/definitions/doc.CreatedUpdated'
+    type: object
+  doc.HealthInsuranceList:
+    properties:
+      count:
+        example: 1
+        type: integer
+      page_context:
+        $ref: '#/definitions/doc.PageContext'
+      results:
+        items:
+          $ref: '#/definitions/doc.HealthInsurance'
+        type: array
+    type: object
+  doc.IncomeTax:
+    properties:
+      created:
+        $ref: '#/definitions/doc.CreatedUpdated'
+      id:
+        format: uuid
+        type: string
+      name:
+        example: Fulan
+        type: string
+      updated:
+        $ref: '#/definitions/doc.CreatedUpdated'
+    type: object
+  doc.IncomeTaxList:
+    properties:
+      count:
+        example: 1
+        type: integer
+      page_context:
+        $ref: '#/definitions/doc.PageContext'
+      results:
+        items:
+          $ref: '#/definitions/doc.IncomeTax'
+        type: array
+    type: object
+  doc.JobLevel:
+    properties:
+      code:
+        example: ST
+        type: string
+      created:
+        $ref: '#/definitions/doc.CreatedUpdated'
+      id:
+        format: uuid
+        type: string
+      is_active:
+        type: boolean
+      name:
+        example: Staff
+        type: string
+      updated:
+        $ref: '#/definitions/doc.CreatedUpdated'
+    type: object
+  doc.JobLevelList:
+    properties:
+      count:
+        example: 1
+        type: integer
+      page_context:
+        $ref: '#/definitions/doc.PageContext'
+      results:
+        items:
+          $ref: '#/definitions/doc.JobLevel'
+        type: array
+    type: object
+  doc.JobPosition:
+    properties:
+      code:
+        example: BE Dev
+        type: string
+      created:
+        $ref: '#/definitions/doc.CreatedUpdated'
+      department:
+        $ref: '#/definitions/doc.DepartmentSummary'
+      id:
+        format: uuid
+        type: string
+      is_active:
+        type: boolean
+      name:
+        example: Backend Developer
+        type: string
+      updated:
+        $ref: '#/definitions/doc.CreatedUpdated'
+    type: object
+  doc.JobPositionList:
+    properties:
+      count:
+        example: 1
+        type: integer
+      page_context:
+        $ref: '#/definitions/doc.PageContext'
+      results:
+        items:
+          $ref: '#/definitions/doc.JobPosition'
+        type: array
+    type: object
+  doc.NonTaxableIncome:
+    properties:
+      created:
+        $ref: '#/definitions/doc.CreatedUpdated'
+      id:
+        format: uuid
+        type: string
+      name:
+        example: Fulan
+        type: string
+      updated:
+        $ref: '#/definitions/doc.CreatedUpdated'
+    type: object
+  doc.NonTaxableIncomeList:
+    properties:
+      count:
+        example: 1
+        type: integer
+      page_context:
+        $ref: '#/definitions/doc.PageContext'
+      results:
+        items:
+          $ref: '#/definitions/doc.NonTaxableIncome'
+        type: array
+    type: object
+  doc.PageContext:
+    properties:
+      page:
+        example: 1
+        type: integer
+      per_page:
+        example: 20
+        type: integer
+      total_pages:
+        example: 1
+        type: integer
+    type: object
+  doc.Payroll:
+    properties:
+      created:
+        $ref: '#/definitions/doc.CreatedUpdated'
+      id:
+        format: uuid
+        type: string
+      name:
+        example: Fulan
+        type: string
+      updated:
+        $ref: '#/definitions/doc.CreatedUpdated'
+    type: object
+  doc.PayrollComponent:
+    properties:
+      created:
+        $ref: '#/definitions/doc.CreatedUpdated'
+      id:
+        format: uuid
+        type: string
+      name:
+        example: Fulan
+        type: string
+      updated:
+        $ref: '#/definitions/doc.CreatedUpdated'
+    type: object
+  doc.PayrollComponentList:
+    properties:
+      count:
+        example: 1
+        type: integer
+      page_context:
+        $ref: '#/definitions/doc.PageContext'
+      results:
+        items:
+          $ref: '#/definitions/doc.PayrollComponent'
+        type: array
+    type: object
+  doc.PayrollList:
+    properties:
+      count:
+        example: 1
+        type: integer
+      page_context:
+        $ref: '#/definitions/doc.PageContext'
+      results:
+        items:
+          $ref: '#/definitions/doc.Payroll'
+        type: array
+    type: object
+  doc.TimeSchedule:
+    properties:
+      created:
+        $ref: '#/definitions/doc.CreatedUpdated'
+      id:
+        format: uuid
+        type: string
+      name:
+        example: Fulan
+        type: string
+      updated:
+        $ref: '#/definitions/doc.CreatedUpdated'
+    type: object
+  doc.TimeScheduleList:
+    properties:
+      count:
+        example: 1
+        type: integer
+      page_context:
+        $ref: '#/definitions/doc.PageContext'
+      results:
+        items:
+          $ref: '#/definitions/doc.TimeSchedule'
+        type: array
+    type: object
+  doc.Unauthorized:
+    properties:
+      error:
+        properties:
+          code:
+            example: 401
+            type: integer
+          message:
+            example: Invalid authorization credentials.
+            type: string
+        type: object
+    type: object
+host: localhost:4004
+info:
+  contact: {}
+  description: Zahir HRM API.
+  title: Zahir HRM API
+  version: "1.0"
+paths:
+  /api/hrm/v1/approval_requests:
+    get:
+      consumes:
+      - application/json
+      description: Get approval request list
+      parameters:
+      - default: Bearer 99a5b39274f741ffb6de26111914dc7e
+        description: Bearer {access_token}
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - default: kompanitest2211491356-pg.zahironline.com
+        description: slug of company data
+        in: header
+        name: slug
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/doc.ApprovalRequestList'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/doc.Unauthorized'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/doc.Forbidden'
+      summary: Get approval request list
+      tags:
+      - Approval Request
+    post:
+      consumes:
+      - application/json
+      description: Create new approval request
+      parameters:
+      - default: Bearer 99a5b39274f741ffb6de26111914dc7e
+        description: Bearer {access_token}
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - default: kompanitest2211491356-pg.zahironline.com
+        description: slug of company data
+        in: header
+        name: slug
+        required: true
+        type: string
+      - description: body
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/doc.ApprovalRequest'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/doc.ApprovalRequest'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/doc.BadRequest'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/doc.Unauthorized'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/doc.Forbidden'
+      summary: Create new approval request
+      tags:
+      - Approval Request
+  /api/hrm/v1/approval_requests/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: Delete approval request by id
+      parameters:
+      - description: Approval Request ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - default: Bearer 99a5b39274f741ffb6de26111914dc7e
+        description: Bearer {access_token}
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - default: kompanitest2211491356-pg.zahironline.com
+        description: slug of company data
+        in: header
+        name: slug
+        required: true
+        type: string
+      - description: body
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/doc.ApprovalRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/doc.Deleted'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/doc.BadRequest'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/doc.Unauthorized'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/doc.Forbidden'
+      summary: Delete approval request by id
+      tags:
+      - Approval Request
+    get:
+      consumes:
+      - application/json
+      description: Get approval request by id
+      parameters:
+      - description: Approval Request ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - default: Bearer 99a5b39274f741ffb6de26111914dc7e
+        description: Bearer {access_token}
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - default: kompanitest2211491356-pg.zahironline.com
+        description: slug of company data
+        in: header
+        name: slug
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/doc.ApprovalRequest'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/doc.Unauthorized'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/doc.Forbidden'
+      summary: Get approval request by id
+      tags:
+      - Approval Request
+    patch:
+      consumes:
+      - application/json
+      description: Update approval request by id
+      parameters:
+      - description: Approval Request ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - default: Bearer 99a5b39274f741ffb6de26111914dc7e
+        description: Bearer {access_token}
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - default: kompanitest2211491356-pg.zahironline.com
+        description: slug of company data
+        in: header
+        name: slug
+        required: true
+        type: string
+      - description: body
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/doc.ApprovalRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/doc.ApprovalRequest'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/doc.BadRequest'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/doc.Unauthorized'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/doc.Forbidden'
+      summary: Update approval request by id
+      tags:
+      - Approval Request
+    put:
+      consumes:
+      - application/json
+      description: Update approval request by id
+      parameters:
+      - description: Approval Request ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - default: Bearer 99a5b39274f741ffb6de26111914dc7e
+        description: Bearer {access_token}
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - default: kompanitest2211491356-pg.zahironline.com
+        description: slug of company data
+        in: header
+        name: slug
+        required: true
+        type: string
+      - description: body
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/doc.ApprovalRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/doc.ApprovalRequest'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/doc.BadRequest'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/doc.Unauthorized'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/doc.Forbidden'
+      summary: Update approval request by id
+      tags:
+      - Approval Request
+  /api/hrm/v1/approvals:
+    get:
+      consumes:
+      - application/json
+      description: Get approval list
+      parameters:
+      - default: Bearer 99a5b39274f741ffb6de26111914dc7e
+        description: Bearer {access_token}
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - default: kompanitest2211491356-pg.zahironline.com
+        description: slug of company data
+        in: header
+        name: slug
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/doc.ApprovalList'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/doc.Unauthorized'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/doc.Forbidden'
+      summary: Get approval list
+      tags:
+      - Approval
+    post:
+      consumes:
+      - application/json
+      description: Create new approval
+      parameters:
+      - default: Bearer 99a5b39274f741ffb6de26111914dc7e
+        description: Bearer {access_token}
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - default: kompanitest2211491356-pg.zahironline.com
+        description: slug of company data
+        in: header
+        name: slug
+        required: true
+        type: string
+      - description: body
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/doc.Approval'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/doc.Approval'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/doc.BadRequest'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/doc.Unauthorized'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/doc.Forbidden'
+      summary: Create new approval
+      tags:
+      - Approval
+  /api/hrm/v1/approvals/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: Delete approval by id
+      parameters:
+      - description: Approval ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - default: Bearer 99a5b39274f741ffb6de26111914dc7e
+        description: Bearer {access_token}
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - default: kompanitest2211491356-pg.zahironline.com
+        description: slug of company data
+        in: header
+        name: slug
+        required: true
+        type: string
+      - description: body
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/doc.Approval'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/doc.Deleted'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/doc.BadRequest'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/doc.Unauthorized'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/doc.Forbidden'
+      summary: Delete approval by id
+      tags:
+      - Approval
+    get:
+      consumes:
+      - application/json
+      description: Get approval by id
+      parameters:
+      - description: Approval ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - default: Bearer 99a5b39274f741ffb6de26111914dc7e
+        description: Bearer {access_token}
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - default: kompanitest2211491356-pg.zahironline.com
+        description: slug of company data
+        in: header
+        name: slug
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/doc.Approval'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/doc.Unauthorized'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/doc.Forbidden'
+      summary: Get approval by id
+      tags:
+      - Approval
+    patch:
+      consumes:
+      - application/json
+      description: Update approval by id
+      parameters:
+      - description: Approval ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - default: Bearer 99a5b39274f741ffb6de26111914dc7e
+        description: Bearer {access_token}
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - default: kompanitest2211491356-pg.zahironline.com
+        description: slug of company data
+        in: header
+        name: slug
+        required: true
+        type: string
+      - description: body
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/doc.Approval'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/doc.Approval'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/doc.BadRequest'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/doc.Unauthorized'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/doc.Forbidden'
+      summary: Update approval by id
+      tags:
+      - Approval
+    put:
+      consumes:
+      - application/json
+      description: Update approval by id
+      parameters:
+      - description: Approval ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - default: Bearer 99a5b39274f741ffb6de26111914dc7e
+        description: Bearer {access_token}
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - default: kompanitest2211491356-pg.zahironline.com
+        description: slug of company data
+        in: header
+        name: slug
+        required: true
+        type: string
+      - description: body
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/doc.Approval'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/doc.Approval'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/doc.BadRequest'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/doc.Unauthorized'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/doc.Forbidden'
+      summary: Update approval by id
+      tags:
+      - Approval
+  /api/hrm/v1/branches:
+    get:
+      consumes:
+      - application/json
+      description: Get branch list
+      parameters:
+      - default: kompanitest2211491356-pg.zahironline.com
+        description: Company ID or Slug
+        in: path
+        name: company_id
+        required: true
+        type: string
+      - default: Bearer 99a5b39274f741ffb6de26111914dc7e
+        description: Bearer {access_token}
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/doc.BranchList'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/doc.Unauthorized'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/doc.Forbidden'
+      summary: Get branch list
+      tags:
+      - Branch
+    post:
+      consumes:
+      - application/json
+      description: Create new branch
+      parameters:
+      - default: kompanitest2211491356-pg.zahironline.com
+        description: Company ID or Slug
+        in: path
+        name: company_id
+        required: true
+        type: string
+      - default: Bearer 99a5b39274f741ffb6de26111914dc7e
+        description: Bearer {access_token}
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - description: body
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/doc.Branch'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/doc.Branch'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/doc.BadRequest'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/doc.Unauthorized'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/doc.Forbidden'
+      summary: Create new branch
+      tags:
+      - Branch
+  /api/hrm/v1/companies/{company_id}/branches/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: Delete branch by id
+      parameters:
+      - default: kompanitest2211491356-pg.zahironline.com
+        description: Company ID or Slug
+        in: path
+        name: company_id
+        required: true
+        type: string
+      - description: Branch ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - default: Bearer 99a5b39274f741ffb6de26111914dc7e
+        description: Bearer {access_token}
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - description: body
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/doc.Branch'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/doc.Deleted'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/doc.BadRequest'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/doc.Unauthorized'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/doc.Forbidden'
+      summary: Delete branch by id
+      tags:
+      - Branch
+    get:
+      consumes:
+      - application/json
+      description: Get branch by id
+      parameters:
+      - default: kompanitest2211491356-pg.zahironline.com
+        description: Company ID or Slug
+        in: path
+        name: company_id
+        required: true
+        type: string
+      - description: Branch ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - default: Bearer 99a5b39274f741ffb6de26111914dc7e
+        description: Bearer {access_token}
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/doc.Branch'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/doc.Unauthorized'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/doc.Forbidden'
+      summary: Get branch by id
+      tags:
+      - Branch
+    patch:
+      consumes:
+      - application/json
+      description: Update branch by id
+      parameters:
+      - default: kompanitest2211491356-pg.zahironline.com
+        description: Company ID or Slug
+        in: path
+        name: company_id
+        required: true
+        type: string
+      - description: Branch ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - default: Bearer 99a5b39274f741ffb6de26111914dc7e
+        description: Bearer {access_token}
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - description: body
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/doc.Branch'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/doc.Branch'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/doc.BadRequest'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/doc.Unauthorized'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/doc.Forbidden'
+      summary: Update branch by id
+      tags:
+      - Branch
+    put:
+      consumes:
+      - application/json
+      description: Update branch by id
+      parameters:
+      - default: kompanitest2211491356-pg.zahironline.com
+        description: Company ID or Slug
+        in: path
+        name: company_id
+        required: true
+        type: string
+      - description: Branch ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - default: Bearer 99a5b39274f741ffb6de26111914dc7e
+        description: Bearer {access_token}
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - description: body
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/doc.Branch'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/doc.Branch'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/doc.BadRequest'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/doc.Unauthorized'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/doc.Forbidden'
+      summary: Update branch by id
+      tags:
+      - Branch
+  /api/hrm/v1/departments:
+    get:
+      consumes:
+      - application/json
+      description: Get department list
+      parameters:
+      - default: Bearer 99a5b39274f741ffb6de26111914dc7e
+        description: Bearer {access_token}
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - default: kompanitest2211491356-pg.zahironline.com
+        description: slug of company data
+        in: header
+        name: slug
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/doc.DepartmentList'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/doc.Unauthorized'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/doc.Forbidden'
+      summary: Get department list
+      tags:
+      - Department
+    post:
+      consumes:
+      - application/json
+      description: Create new department
+      parameters:
+      - default: Bearer 99a5b39274f741ffb6de26111914dc7e
+        description: Bearer {access_token}
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - default: kompanitest2211491356-pg.zahironline.com
+        description: slug of company data
+        in: header
+        name: slug
+        required: true
+        type: string
+      - description: body
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/doc.Department'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/doc.Department'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/doc.BadRequest'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/doc.Unauthorized'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/doc.Forbidden'
+      summary: Create new department
+      tags:
+      - Department
+  /api/hrm/v1/departments/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: Delete department by id
+      parameters:
+      - description: Department ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - default: Bearer 99a5b39274f741ffb6de26111914dc7e
+        description: Bearer {access_token}
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - default: kompanitest2211491356-pg.zahironline.com
+        description: slug of company data
+        in: header
+        name: slug
+        required: true
+        type: string
+      - description: body
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/doc.Department'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/doc.Deleted'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/doc.BadRequest'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/doc.Unauthorized'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/doc.Forbidden'
+      summary: Delete department by id
+      tags:
+      - Department
+    get:
+      consumes:
+      - application/json
+      description: Get department by id
+      parameters:
+      - description: Department ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - default: Bearer 99a5b39274f741ffb6de26111914dc7e
+        description: Bearer {access_token}
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - default: kompanitest2211491356-pg.zahironline.com
+        description: slug of company data
+        in: header
+        name: slug
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/doc.Department'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/doc.Unauthorized'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/doc.Forbidden'
+      summary: Get department by id
+      tags:
+      - Department
+    patch:
+      consumes:
+      - application/json
+      description: Update department by id
+      parameters:
+      - description: Department ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - default: Bearer 99a5b39274f741ffb6de26111914dc7e
+        description: Bearer {access_token}
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - default: kompanitest2211491356-pg.zahironline.com
+        description: slug of company data
+        in: header
+        name: slug
+        required: true
+        type: string
+      - description: body
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/doc.Department'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/doc.Department'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/doc.BadRequest'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/doc.Unauthorized'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/doc.Forbidden'
+      summary: Update department by id
+      tags:
+      - Department
+    put:
+      consumes:
+      - application/json
+      description: Update department by id
+      parameters:
+      - description: Department ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - default: Bearer 99a5b39274f741ffb6de26111914dc7e
+        description: Bearer {access_token}
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - default: kompanitest2211491356-pg.zahironline.com
+        description: slug of company data
+        in: header
+        name: slug
+        required: true
+        type: string
+      - description: body
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/doc.Department'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/doc.Department'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/doc.BadRequest'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/doc.Unauthorized'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/doc.Forbidden'
+      summary: Update department by id
+      tags:
+      - Department
+  /api/hrm/v1/employee_bank_accounts:
+    get:
+      consumes:
+      - application/json
+      description: Get employee list
+      parameters:
+      - default: Bearer 99a5b39274f741ffb6de26111914dc7e
+        description: Bearer {access_token}
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - default: kompanitest2211491356-pg.zahironline.com
+        description: slug of company data
+        in: header
+        name: slug
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/doc.EmployeeBankAccountList'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/doc.Unauthorized'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/doc.Forbidden'
+      summary: Get employee list
+      tags:
+      - Employee Bank Account
+    post:
+      consumes:
+      - application/json
+      description: Create new employee
+      parameters:
+      - default: Bearer 99a5b39274f741ffb6de26111914dc7e
+        description: Bearer {access_token}
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - default: kompanitest2211491356-pg.zahironline.com
+        description: slug of company data
+        in: header
+        name: slug
+        required: true
+        type: string
+      - description: body
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/doc.EmployeeBankAccount'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/doc.EmployeeBankAccount'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/doc.BadRequest'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/doc.Unauthorized'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/doc.Forbidden'
+      summary: Create new employee
+      tags:
+      - Employee Bank Account
+  /api/hrm/v1/employee_bank_accounts/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: Delete employee bank account by id
+      parameters:
+      - description: Employee Bank Account ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - default: Bearer 99a5b39274f741ffb6de26111914dc7e
+        description: Bearer {access_token}
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - default: kompanitest2211491356-pg.zahironline.com
+        description: slug of company data
+        in: header
+        name: slug
+        required: true
+        type: string
+      - description: body
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/doc.EmployeeBankAccount'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/doc.Deleted'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/doc.BadRequest'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/doc.Unauthorized'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/doc.Forbidden'
+      summary: Delete employee bank account by id
+      tags:
+      - Employee Bank Account
+    get:
+      consumes:
+      - application/json
+      description: Get employee bank account by id
+      parameters:
+      - description: Employee Bank Account ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - default: Bearer 99a5b39274f741ffb6de26111914dc7e
+        description: Bearer {access_token}
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - default: kompanitest2211491356-pg.zahironline.com
+        description: slug of company data
+        in: header
+        name: slug
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/doc.EmployeeBankAccount'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/doc.Unauthorized'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/doc.Forbidden'
+      summary: Get employee bank account by id
+      tags:
+      - Employee Bank Account
+    patch:
+      consumes:
+      - application/json
+      description: Update employee bank account by id
+      parameters:
+      - description: Employee Bank Account ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - default: Bearer 99a5b39274f741ffb6de26111914dc7e
+        description: Bearer {access_token}
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - default: kompanitest2211491356-pg.zahironline.com
+        description: slug of company data
+        in: header
+        name: slug
+        required: true
+        type: string
+      - description: body
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/doc.EmployeeBankAccount'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/doc.EmployeeBankAccount'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/doc.BadRequest'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/doc.Unauthorized'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/doc.Forbidden'
+      summary: Update employee bank account by id
+      tags:
+      - Employee Bank Account
+    put:
+      consumes:
+      - application/json
+      description: Update employee bank account by id
+      parameters:
+      - description: Employee Bank Account ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - default: Bearer 99a5b39274f741ffb6de26111914dc7e
+        description: Bearer {access_token}
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - default: kompanitest2211491356-pg.zahironline.com
+        description: slug of company data
+        in: header
+        name: slug
+        required: true
+        type: string
+      - description: body
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/doc.EmployeeBankAccount'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/doc.EmployeeBankAccount'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/doc.BadRequest'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/doc.Unauthorized'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/doc.Forbidden'
+      summary: Update employee bank account by id
+      tags:
+      - Employee Bank Account
+  /api/hrm/v1/employee_classes:
+    get:
+      consumes:
+      - application/json
+      description: Get employee class list
+      parameters:
+      - default: Bearer 99a5b39274f741ffb6de26111914dc7e
+        description: Bearer {access_token}
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - default: kompanitest2211491356-pg.zahironline.com
+        description: slug of company data
+        in: header
+        name: slug
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/doc.EmployeeClassList'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/doc.Unauthorized'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/doc.Forbidden'
+      summary: Get employee class list
+      tags:
+      - Employee Class
+    post:
+      consumes:
+      - application/json
+      description: Create new employee class
+      parameters:
+      - default: Bearer 99a5b39274f741ffb6de26111914dc7e
+        description: Bearer {access_token}
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - default: kompanitest2211491356-pg.zahironline.com
+        description: slug of company data
+        in: header
+        name: slug
+        required: true
+        type: string
+      - description: body
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/doc.EmployeeClass'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/doc.EmployeeClass'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/doc.BadRequest'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/doc.Unauthorized'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/doc.Forbidden'
+      summary: Create new employee class
+      tags:
+      - Employee Class
+  /api/hrm/v1/employee_classes/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: Delete employee class by id
+      parameters:
+      - description: Employee Class ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - default: Bearer 99a5b39274f741ffb6de26111914dc7e
+        description: Bearer {access_token}
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - default: kompanitest2211491356-pg.zahironline.com
+        description: slug of company data
+        in: header
+        name: slug
+        required: true
+        type: string
+      - description: body
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/doc.EmployeeClass'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/doc.Deleted'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/doc.BadRequest'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/doc.Unauthorized'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/doc.Forbidden'
+      summary: Delete employee class by id
+      tags:
+      - Employee Class
+    get:
+      consumes:
+      - application/json
+      description: Get employee class by id
+      parameters:
+      - description: Employee Class ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - default: Bearer 99a5b39274f741ffb6de26111914dc7e
+        description: Bearer {access_token}
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - default: kompanitest2211491356-pg.zahironline.com
+        description: slug of company data
+        in: header
+        name: slug
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/doc.EmployeeClass'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/doc.Unauthorized'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/doc.Forbidden'
+      summary: Get employee class by id
+      tags:
+      - Employee Class
+    patch:
+      consumes:
+      - application/json
+      description: Update employee class by id
+      parameters:
+      - description: Employee Class ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - default: Bearer 99a5b39274f741ffb6de26111914dc7e
+        description: Bearer {access_token}
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - default: kompanitest2211491356-pg.zahironline.com
+        description: slug of company data
+        in: header
+        name: slug
+        required: true
+        type: string
+      - description: body
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/doc.EmployeeClass'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/doc.EmployeeClass'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/doc.BadRequest'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/doc.Unauthorized'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/doc.Forbidden'
+      summary: Update employee class by id
+      tags:
+      - Employee Class
+    put:
+      consumes:
+      - application/json
+      description: Update employee class by id
+      parameters:
+      - description: Employee Class ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - default: Bearer 99a5b39274f741ffb6de26111914dc7e
+        description: Bearer {access_token}
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - default: kompanitest2211491356-pg.zahironline.com
+        description: slug of company data
+        in: header
+        name: slug
+        required: true
+        type: string
+      - description: body
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/doc.EmployeeClass'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/doc.EmployeeClass'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/doc.BadRequest'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/doc.Unauthorized'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/doc.Forbidden'
+      summary: Update employee class by id
+      tags:
+      - Employee Class
+  /api/hrm/v1/employee_grades:
+    get:
+      consumes:
+      - application/json
+      description: Get employee grade list
+      parameters:
+      - default: Bearer 99a5b39274f741ffb6de26111914dc7e
+        description: Bearer {access_token}
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - default: kompanitest2211491356-pg.zahironline.com
+        description: slug of company data
+        in: header
+        name: slug
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/doc.EmployeeGradeList'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/doc.Unauthorized'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/doc.Forbidden'
+      summary: Get employee grade list
+      tags:
+      - Employee Grade
+    post:
+      consumes:
+      - application/json
+      description: Create new employee grade
+      parameters:
+      - default: Bearer 99a5b39274f741ffb6de26111914dc7e
+        description: Bearer {access_token}
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - default: kompanitest2211491356-pg.zahironline.com
+        description: slug of company data
+        in: header
+        name: slug
+        required: true
+        type: string
+      - description: body
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/doc.EmployeeGrade'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/doc.EmployeeGrade'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/doc.BadRequest'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/doc.Unauthorized'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/doc.Forbidden'
+      summary: Create new employee grade
+      tags:
+      - Employee Grade
+  /api/hrm/v1/employee_grades/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: Delete employee grade by id
+      parameters:
+      - description: Employee Grade ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - default: Bearer 99a5b39274f741ffb6de26111914dc7e
+        description: Bearer {access_token}
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - default: kompanitest2211491356-pg.zahironline.com
+        description: slug of company data
+        in: header
+        name: slug
+        required: true
+        type: string
+      - description: body
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/doc.EmployeeGrade'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/doc.Deleted'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/doc.BadRequest'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/doc.Unauthorized'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/doc.Forbidden'
+      summary: Delete employee grade by id
+      tags:
+      - Employee Grade
+    get:
+      consumes:
+      - application/json
+      description: Get employee grade by id
+      parameters:
+      - description: Employee Grade ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - default: Bearer 99a5b39274f741ffb6de26111914dc7e
+        description: Bearer {access_token}
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - default: kompanitest2211491356-pg.zahironline.com
+        description: slug of company data
+        in: header
+        name: slug
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/doc.EmployeeGrade'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/doc.Unauthorized'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/doc.Forbidden'
+      summary: Get employee grade by id
+      tags:
+      - Employee Grade
+    patch:
+      consumes:
+      - application/json
+      description: Update employee grade by id
+      parameters:
+      - description: Employee Grade ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - default: Bearer 99a5b39274f741ffb6de26111914dc7e
+        description: Bearer {access_token}
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - default: kompanitest2211491356-pg.zahironline.com
+        description: slug of company data
+        in: header
+        name: slug
+        required: true
+        type: string
+      - description: body
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/doc.EmployeeGrade'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/doc.EmployeeGrade'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/doc.BadRequest'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/doc.Unauthorized'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/doc.Forbidden'
+      summary: Update employee grade by id
+      tags:
+      - Employee Grade
+    put:
+      consumes:
+      - application/json
+      description: Update employee grade by id
+      parameters:
+      - description: Employee Grade ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - default: Bearer 99a5b39274f741ffb6de26111914dc7e
+        description: Bearer {access_token}
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - default: kompanitest2211491356-pg.zahironline.com
+        description: slug of company data
+        in: header
+        name: slug
+        required: true
+        type: string
+      - description: body
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/doc.EmployeeGrade'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/doc.EmployeeGrade'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/doc.BadRequest'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/doc.Unauthorized'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/doc.Forbidden'
+      summary: Update employee grade by id
+      tags:
+      - Employee Grade
+  /api/hrm/v1/employee_histories:
+    get:
+      consumes:
+      - application/json
+      description: Get employee history list
+      parameters:
+      - default: Bearer 99a5b39274f741ffb6de26111914dc7e
+        description: Bearer {access_token}
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - default: kompanitest2211491356-pg.zahironline.com
+        description: slug of company data
+        in: header
+        name: slug
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/doc.EmployeeHistoryList'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/doc.Unauthorized'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/doc.Forbidden'
+      summary: Get employee history list
+      tags:
+      - Employee History
+    post:
+      consumes:
+      - application/json
+      description: Create new employee history
+      parameters:
+      - default: Bearer 99a5b39274f741ffb6de26111914dc7e
+        description: Bearer {access_token}
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - default: kompanitest2211491356-pg.zahironline.com
+        description: slug of company data
+        in: header
+        name: slug
+        required: true
+        type: string
+      - description: body
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/doc.EmployeeHistory'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/doc.EmployeeHistory'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/doc.BadRequest'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/doc.Unauthorized'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/doc.Forbidden'
+      summary: Create new employee history
+      tags:
+      - Employee History
+  /api/hrm/v1/employee_histories/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: Delete employee history by id
+      parameters:
+      - description: Employee History ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - default: Bearer 99a5b39274f741ffb6de26111914dc7e
+        description: Bearer {access_token}
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - default: kompanitest2211491356-pg.zahironline.com
+        description: slug of company data
+        in: header
+        name: slug
+        required: true
+        type: string
+      - description: body
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/doc.EmployeeHistory'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/doc.Deleted'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/doc.BadRequest'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/doc.Unauthorized'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/doc.Forbidden'
+      summary: Delete employee history by id
+      tags:
+      - Employee History
+    get:
+      consumes:
+      - application/json
+      description: Get employee history by id
+      parameters:
+      - description: Employee History ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - default: Bearer 99a5b39274f741ffb6de26111914dc7e
+        description: Bearer {access_token}
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - default: kompanitest2211491356-pg.zahironline.com
+        description: slug of company data
+        in: header
+        name: slug
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/doc.EmployeeHistory'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/doc.Unauthorized'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/doc.Forbidden'
+      summary: Get employee history by id
+      tags:
+      - Employee History
+    patch:
+      consumes:
+      - application/json
+      description: Update employee history by id
+      parameters:
+      - description: Employee History ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - default: Bearer 99a5b39274f741ffb6de26111914dc7e
+        description: Bearer {access_token}
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - default: kompanitest2211491356-pg.zahironline.com
+        description: slug of company data
+        in: header
+        name: slug
+        required: true
+        type: string
+      - description: body
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/doc.EmployeeHistory'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/doc.EmployeeHistory'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/doc.BadRequest'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/doc.Unauthorized'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/doc.Forbidden'
+      summary: Update employee history by id
+      tags:
+      - Employee History
+    put:
+      consumes:
+      - application/json
+      description: Update employee history by id
+      parameters:
+      - description: Employee History ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - default: Bearer 99a5b39274f741ffb6de26111914dc7e
+        description: Bearer {access_token}
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - default: kompanitest2211491356-pg.zahironline.com
+        description: slug of company data
+        in: header
+        name: slug
+        required: true
+        type: string
+      - description: body
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/doc.EmployeeHistory'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/doc.EmployeeHistory'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/doc.BadRequest'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/doc.Unauthorized'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/doc.Forbidden'
+      summary: Update employee history by id
+      tags:
+      - Employee History
+  /api/hrm/v1/employee_payroll_components:
+    get:
+      consumes:
+      - application/json
+      description: Get employee payroll component list
+      parameters:
+      - default: Bearer 99a5b39274f741ffb6de26111914dc7e
+        description: Bearer {access_token}
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - default: kompanitest2211491356-pg.zahironline.com
+        description: slug of company data
+        in: header
+        name: slug
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/doc.EmployeePayrollComponentList'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/doc.Unauthorized'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/doc.Forbidden'
+      summary: Get employee payroll component list
+      tags:
+      - Employee Payroll Component
+    post:
+      consumes:
+      - application/json
+      description: Create new employee payroll component
+      parameters:
+      - default: Bearer 99a5b39274f741ffb6de26111914dc7e
+        description: Bearer {access_token}
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - default: kompanitest2211491356-pg.zahironline.com
+        description: slug of company data
+        in: header
+        name: slug
+        required: true
+        type: string
+      - description: body
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/doc.EmployeePayrollComponent'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/doc.EmployeePayrollComponent'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/doc.BadRequest'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/doc.Unauthorized'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/doc.Forbidden'
+      summary: Create new employee payroll component
+      tags:
+      - Employee Payroll Component
+  /api/hrm/v1/employee_payroll_components/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: Delete employee payroll component by id
+      parameters:
+      - description: Employee Payroll Component ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - default: Bearer 99a5b39274f741ffb6de26111914dc7e
+        description: Bearer {access_token}
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - default: kompanitest2211491356-pg.zahironline.com
+        description: slug of company data
+        in: header
+        name: slug
+        required: true
+        type: string
+      - description: body
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/doc.EmployeePayrollComponent'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/doc.Deleted'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/doc.BadRequest'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/doc.Unauthorized'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/doc.Forbidden'
+      summary: Delete employee payroll component by id
+      tags:
+      - Employee Payroll Component
+    get:
+      consumes:
+      - application/json
+      description: Get employee payroll component by id
+      parameters:
+      - description: Employee Payroll Component ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - default: Bearer 99a5b39274f741ffb6de26111914dc7e
+        description: Bearer {access_token}
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - default: kompanitest2211491356-pg.zahironline.com
+        description: slug of company data
+        in: header
+        name: slug
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/doc.EmployeePayrollComponent'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/doc.Unauthorized'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/doc.Forbidden'
+      summary: Get employee payroll component by id
+      tags:
+      - Employee Payroll Component
+    patch:
+      consumes:
+      - application/json
+      description: Update employee payroll component by id
+      parameters:
+      - description: Employee Payroll Component ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - default: Bearer 99a5b39274f741ffb6de26111914dc7e
+        description: Bearer {access_token}
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - default: kompanitest2211491356-pg.zahironline.com
+        description: slug of company data
+        in: header
+        name: slug
+        required: true
+        type: string
+      - description: body
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/doc.EmployeePayrollComponent'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/doc.EmployeePayrollComponent'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/doc.BadRequest'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/doc.Unauthorized'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/doc.Forbidden'
+      summary: Update employee payroll component by id
+      tags:
+      - Employee Payroll Component
+    put:
+      consumes:
+      - application/json
+      description: Update employee payroll component by id
+      parameters:
+      - description: Employee Payroll Component ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - default: Bearer 99a5b39274f741ffb6de26111914dc7e
+        description: Bearer {access_token}
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - default: kompanitest2211491356-pg.zahironline.com
+        description: slug of company data
+        in: header
+        name: slug
+        required: true
+        type: string
+      - description: body
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/doc.EmployeePayrollComponent'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/doc.EmployeePayrollComponent'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/doc.BadRequest'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/doc.Unauthorized'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/doc.Forbidden'
+      summary: Update employee payroll component by id
+      tags:
+      - Employee Payroll Component
+  /api/hrm/v1/employees:
+    get:
+      consumes:
+      - application/json
+      description: Get employee list
+      parameters:
+      - default: Bearer 99a5b39274f741ffb6de26111914dc7e
+        description: Bearer {access_token}
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - default: kompanitest2211491356-pg.zahironline.com
+        description: slug of company data
+        in: header
+        name: slug
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/doc.EmployeeList'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/doc.Unauthorized'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/doc.Forbidden'
+      summary: Get employee list
+      tags:
+      - Employee
+    post:
+      consumes:
+      - application/json
+      description: Create new employee
+      parameters:
+      - default: Bearer 99a5b39274f741ffb6de26111914dc7e
+        description: Bearer {access_token}
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - default: kompanitest2211491356-pg.zahironline.com
+        description: slug of company data
+        in: header
+        name: slug
+        required: true
+        type: string
+      - description: body
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/doc.Employee'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/doc.Employee'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/doc.BadRequest'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/doc.Unauthorized'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/doc.Forbidden'
+      summary: Create new employee
+      tags:
+      - Employee
+  /api/hrm/v1/employees/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: Delete employee by id
+      parameters:
+      - description: Employee ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - default: Bearer 99a5b39274f741ffb6de26111914dc7e
+        description: Bearer {access_token}
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - default: kompanitest2211491356-pg.zahironline.com
+        description: slug of company data
+        in: header
+        name: slug
+        required: true
+        type: string
+      - description: body
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/doc.Employee'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/doc.Deleted'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/doc.BadRequest'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/doc.Unauthorized'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/doc.Forbidden'
+      summary: Delete employee by id
+      tags:
+      - Employee
+    get:
+      consumes:
+      - application/json
+      description: Get employee by id
+      parameters:
+      - description: Employee ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - default: Bearer 99a5b39274f741ffb6de26111914dc7e
+        description: Bearer {access_token}
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - default: kompanitest2211491356-pg.zahironline.com
+        description: slug of company data
+        in: header
+        name: slug
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/doc.Employee'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/doc.Unauthorized'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/doc.Forbidden'
+      summary: Get employee by id
+      tags:
+      - Employee
+    patch:
+      consumes:
+      - application/json
+      description: Update employee by id
+      parameters:
+      - description: Employee ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - default: Bearer 99a5b39274f741ffb6de26111914dc7e
+        description: Bearer {access_token}
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - default: kompanitest2211491356-pg.zahironline.com
+        description: slug of company data
+        in: header
+        name: slug
+        required: true
+        type: string
+      - description: body
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/doc.Employee'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/doc.Employee'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/doc.BadRequest'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/doc.Unauthorized'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/doc.Forbidden'
+      summary: Update employee by id
+      tags:
+      - Employee
+    put:
+      consumes:
+      - application/json
+      description: Update employee by id
+      parameters:
+      - description: Employee ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - default: Bearer 99a5b39274f741ffb6de26111914dc7e
+        description: Bearer {access_token}
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - default: kompanitest2211491356-pg.zahironline.com
+        description: slug of company data
+        in: header
+        name: slug
+        required: true
+        type: string
+      - description: body
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/doc.Employee'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/doc.Employee'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/doc.BadRequest'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/doc.Unauthorized'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/doc.Forbidden'
+      summary: Update employee by id
+      tags:
+      - Employee
+  /api/hrm/v1/employment_statuses:
+    get:
+      consumes:
+      - application/json
+      description: Get employment status list
+      parameters:
+      - default: Bearer 99a5b39274f741ffb6de26111914dc7e
+        description: Bearer {access_token}
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - default: kompanitest2211491356-pg.zahironline.com
+        description: slug of company data
+        in: header
+        name: slug
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/doc.EmploymentStatusList'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/doc.Unauthorized'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/doc.Forbidden'
+      summary: Get employment status list
+      tags:
+      - Employment Status
+    post:
+      consumes:
+      - application/json
+      description: Create new employment status
+      parameters:
+      - default: Bearer 99a5b39274f741ffb6de26111914dc7e
+        description: Bearer {access_token}
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - default: kompanitest2211491356-pg.zahironline.com
+        description: slug of company data
+        in: header
+        name: slug
+        required: true
+        type: string
+      - description: body
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/doc.EmploymentStatus'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/doc.EmploymentStatus'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/doc.BadRequest'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/doc.Unauthorized'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/doc.Forbidden'
+      summary: Create new employment status
+      tags:
+      - Employment Status
+  /api/hrm/v1/employment_statuses/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: Delete employment status by id
+      parameters:
+      - description: Employment Status ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - default: Bearer 99a5b39274f741ffb6de26111914dc7e
+        description: Bearer {access_token}
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - default: kompanitest2211491356-pg.zahironline.com
+        description: slug of company data
+        in: header
+        name: slug
+        required: true
+        type: string
+      - description: body
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/doc.EmploymentStatus'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/doc.Deleted'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/doc.BadRequest'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/doc.Unauthorized'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/doc.Forbidden'
+      summary: Delete employment status by id
+      tags:
+      - Employment Status
+    get:
+      consumes:
+      - application/json
+      description: Get employment status by id
+      parameters:
+      - description: Employment Status ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - default: Bearer 99a5b39274f741ffb6de26111914dc7e
+        description: Bearer {access_token}
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - default: kompanitest2211491356-pg.zahironline.com
+        description: slug of company data
+        in: header
+        name: slug
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/doc.EmploymentStatus'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/doc.Unauthorized'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/doc.Forbidden'
+      summary: Get employment status by id
+      tags:
+      - Employment Status
+    patch:
+      consumes:
+      - application/json
+      description: Update employment status by id
+      parameters:
+      - description: Employment Status ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - default: Bearer 99a5b39274f741ffb6de26111914dc7e
+        description: Bearer {access_token}
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - default: kompanitest2211491356-pg.zahironline.com
+        description: slug of company data
+        in: header
+        name: slug
+        required: true
+        type: string
+      - description: body
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/doc.EmploymentStatus'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/doc.EmploymentStatus'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/doc.BadRequest'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/doc.Unauthorized'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/doc.Forbidden'
+      summary: Update employment status by id
+      tags:
+      - Employment Status
+    put:
+      consumes:
+      - application/json
+      description: Update employment status by id
+      parameters:
+      - description: Employment Status ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - default: Bearer 99a5b39274f741ffb6de26111914dc7e
+        description: Bearer {access_token}
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - default: kompanitest2211491356-pg.zahironline.com
+        description: slug of company data
+        in: header
+        name: slug
+        required: true
+        type: string
+      - description: body
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/doc.EmploymentStatus'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/doc.EmploymentStatus'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/doc.BadRequest'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/doc.Unauthorized'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/doc.Forbidden'
+      summary: Update employment status by id
+      tags:
+      - Employment Status
+  /api/hrm/v1/health_insurances:
+    get:
+      consumes:
+      - application/json
+      description: Get health insurance list
+      parameters:
+      - default: Bearer 99a5b39274f741ffb6de26111914dc7e
+        description: Bearer {access_token}
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - default: kompanitest2211491356-pg.zahironline.com
+        description: slug of company data
+        in: header
+        name: slug
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/doc.HealthInsuranceList'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/doc.Unauthorized'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/doc.Forbidden'
+      summary: Get health insurance list
+      tags:
+      - Health Insurance
+    post:
+      consumes:
+      - application/json
+      description: Create new health insurance
+      parameters:
+      - default: Bearer 99a5b39274f741ffb6de26111914dc7e
+        description: Bearer {access_token}
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - default: kompanitest2211491356-pg.zahironline.com
+        description: slug of company data
+        in: header
+        name: slug
+        required: true
+        type: string
+      - description: body
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/doc.HealthInsurance'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/doc.HealthInsurance'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/doc.BadRequest'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/doc.Unauthorized'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/doc.Forbidden'
+      summary: Create new health insurance
+      tags:
+      - Health Insurance
+  /api/hrm/v1/health_insurances/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: Delete health insurance by id
+      parameters:
+      - description: Health Insurance ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - default: Bearer 99a5b39274f741ffb6de26111914dc7e
+        description: Bearer {access_token}
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - default: kompanitest2211491356-pg.zahironline.com
+        description: slug of company data
+        in: header
+        name: slug
+        required: true
+        type: string
+      - description: body
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/doc.HealthInsurance'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/doc.Deleted'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/doc.BadRequest'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/doc.Unauthorized'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/doc.Forbidden'
+      summary: Delete health insurance by id
+      tags:
+      - Health Insurance
+    get:
+      consumes:
+      - application/json
+      description: Get health insurance by id
+      parameters:
+      - description: Health Insurance ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - default: Bearer 99a5b39274f741ffb6de26111914dc7e
+        description: Bearer {access_token}
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - default: kompanitest2211491356-pg.zahironline.com
+        description: slug of company data
+        in: header
+        name: slug
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/doc.HealthInsurance'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/doc.Unauthorized'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/doc.Forbidden'
+      summary: Get health insurance by id
+      tags:
+      - Health Insurance
+    patch:
+      consumes:
+      - application/json
+      description: Update health insurance by id
+      parameters:
+      - description: Health Insurance ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - default: Bearer 99a5b39274f741ffb6de26111914dc7e
+        description: Bearer {access_token}
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - default: kompanitest2211491356-pg.zahironline.com
+        description: slug of company data
+        in: header
+        name: slug
+        required: true
+        type: string
+      - description: body
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/doc.HealthInsurance'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/doc.HealthInsurance'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/doc.BadRequest'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/doc.Unauthorized'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/doc.Forbidden'
+      summary: Update health insurance by id
+      tags:
+      - Health Insurance
+    put:
+      consumes:
+      - application/json
+      description: Update health insurance by id
+      parameters:
+      - description: Health Insurance ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - default: Bearer 99a5b39274f741ffb6de26111914dc7e
+        description: Bearer {access_token}
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - default: kompanitest2211491356-pg.zahironline.com
+        description: slug of company data
+        in: header
+        name: slug
+        required: true
+        type: string
+      - description: body
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/doc.HealthInsurance'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/doc.HealthInsurance'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/doc.BadRequest'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/doc.Unauthorized'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/doc.Forbidden'
+      summary: Update health insurance by id
+      tags:
+      - Health Insurance
+  /api/hrm/v1/income_taxes:
+    get:
+      consumes:
+      - application/json
+      description: Get income tax list
+      parameters:
+      - default: Bearer 99a5b39274f741ffb6de26111914dc7e
+        description: Bearer {access_token}
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - default: kompanitest2211491356-pg.zahironline.com
+        description: slug of company data
+        in: header
+        name: slug
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/doc.IncomeTaxList'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/doc.Unauthorized'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/doc.Forbidden'
+      summary: Get income tax list
+      tags:
+      - Income Tax
+    post:
+      consumes:
+      - application/json
+      description: Create new income tax
+      parameters:
+      - default: Bearer 99a5b39274f741ffb6de26111914dc7e
+        description: Bearer {access_token}
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - default: kompanitest2211491356-pg.zahironline.com
+        description: slug of company data
+        in: header
+        name: slug
+        required: true
+        type: string
+      - description: body
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/doc.IncomeTax'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/doc.IncomeTax'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/doc.BadRequest'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/doc.Unauthorized'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/doc.Forbidden'
+      summary: Create new income tax
+      tags:
+      - Income Tax
+  /api/hrm/v1/income_taxes/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: Delete income tax by id
+      parameters:
+      - description: Income Tax ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - default: Bearer 99a5b39274f741ffb6de26111914dc7e
+        description: Bearer {access_token}
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - default: kompanitest2211491356-pg.zahironline.com
+        description: slug of company data
+        in: header
+        name: slug
+        required: true
+        type: string
+      - description: body
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/doc.IncomeTax'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/doc.Deleted'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/doc.BadRequest'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/doc.Unauthorized'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/doc.Forbidden'
+      summary: Delete income tax by id
+      tags:
+      - Income Tax
+    get:
+      consumes:
+      - application/json
+      description: Get income tax by id
+      parameters:
+      - description: Income Tax ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - default: Bearer 99a5b39274f741ffb6de26111914dc7e
+        description: Bearer {access_token}
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - default: kompanitest2211491356-pg.zahironline.com
+        description: slug of company data
+        in: header
+        name: slug
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/doc.IncomeTax'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/doc.Unauthorized'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/doc.Forbidden'
+      summary: Get income tax by id
+      tags:
+      - Income Tax
+    patch:
+      consumes:
+      - application/json
+      description: Update income tax by id
+      parameters:
+      - description: Income Tax ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - default: Bearer 99a5b39274f741ffb6de26111914dc7e
+        description: Bearer {access_token}
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - default: kompanitest2211491356-pg.zahironline.com
+        description: slug of company data
+        in: header
+        name: slug
+        required: true
+        type: string
+      - description: body
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/doc.IncomeTax'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/doc.IncomeTax'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/doc.BadRequest'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/doc.Unauthorized'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/doc.Forbidden'
+      summary: Update income tax by id
+      tags:
+      - Income Tax
+    put:
+      consumes:
+      - application/json
+      description: Update income tax by id
+      parameters:
+      - description: Income Tax ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - default: Bearer 99a5b39274f741ffb6de26111914dc7e
+        description: Bearer {access_token}
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - default: kompanitest2211491356-pg.zahironline.com
+        description: slug of company data
+        in: header
+        name: slug
+        required: true
+        type: string
+      - description: body
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/doc.IncomeTax'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/doc.IncomeTax'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/doc.BadRequest'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/doc.Unauthorized'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/doc.Forbidden'
+      summary: Update income tax by id
+      tags:
+      - Income Tax
+  /api/hrm/v1/job_levels:
+    get:
+      consumes:
+      - application/json
+      description: Get employee list
+      parameters:
+      - default: Bearer 99a5b39274f741ffb6de26111914dc7e
+        description: Bearer {access_token}
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - default: kompanitest2211491356-pg.zahironline.com
+        description: slug of company data
+        in: header
+        name: slug
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/doc.JobLevelList'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/doc.Unauthorized'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/doc.Forbidden'
+      summary: Get employee list
+      tags:
+      - Job Level
+    post:
+      consumes:
+      - application/json
+      description: Create new employee
+      parameters:
+      - default: Bearer 99a5b39274f741ffb6de26111914dc7e
+        description: Bearer {access_token}
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - default: kompanitest2211491356-pg.zahironline.com
+        description: slug of company data
+        in: header
+        name: slug
+        required: true
+        type: string
+      - description: body
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/doc.JobLevel'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/doc.JobLevel'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/doc.BadRequest'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/doc.Unauthorized'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/doc.Forbidden'
+      summary: Create new employee
+      tags:
+      - Job Level
+  /api/hrm/v1/job_levels/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: Delete job level by id
+      parameters:
+      - description: Job Level ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - default: Bearer 99a5b39274f741ffb6de26111914dc7e
+        description: Bearer {access_token}
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - default: kompanitest2211491356-pg.zahironline.com
+        description: slug of company data
+        in: header
+        name: slug
+        required: true
+        type: string
+      - description: body
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/doc.JobLevel'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/doc.Deleted'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/doc.BadRequest'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/doc.Unauthorized'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/doc.Forbidden'
+      summary: Delete job level by id
+      tags:
+      - Job Level
+    get:
+      consumes:
+      - application/json
+      description: Get job level by id
+      parameters:
+      - description: Job Level ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - default: Bearer 99a5b39274f741ffb6de26111914dc7e
+        description: Bearer {access_token}
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - default: kompanitest2211491356-pg.zahironline.com
+        description: slug of company data
+        in: header
+        name: slug
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/doc.JobLevel'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/doc.Unauthorized'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/doc.Forbidden'
+      summary: Get job level by id
+      tags:
+      - Job Level
+    patch:
+      consumes:
+      - application/json
+      description: Update job level by id
+      parameters:
+      - description: Job Level ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - default: Bearer 99a5b39274f741ffb6de26111914dc7e
+        description: Bearer {access_token}
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - default: kompanitest2211491356-pg.zahironline.com
+        description: slug of company data
+        in: header
+        name: slug
+        required: true
+        type: string
+      - description: body
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/doc.JobLevel'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/doc.JobLevel'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/doc.BadRequest'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/doc.Unauthorized'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/doc.Forbidden'
+      summary: Update job level by id
+      tags:
+      - Job Level
+    put:
+      consumes:
+      - application/json
+      description: Update job level by id
+      parameters:
+      - description: Job Level ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - default: Bearer 99a5b39274f741ffb6de26111914dc7e
+        description: Bearer {access_token}
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - default: kompanitest2211491356-pg.zahironline.com
+        description: slug of company data
+        in: header
+        name: slug
+        required: true
+        type: string
+      - description: body
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/doc.JobLevel'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/doc.JobLevel'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/doc.BadRequest'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/doc.Unauthorized'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/doc.Forbidden'
+      summary: Update job level by id
+      tags:
+      - Job Level
+  /api/hrm/v1/job_positions:
+    get:
+      consumes:
+      - application/json
+      description: Get job position list
+      parameters:
+      - default: Bearer 99a5b39274f741ffb6de26111914dc7e
+        description: Bearer {access_token}
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - default: kompanitest2211491356-pg.zahironline.com
+        description: slug of company data
+        in: header
+        name: slug
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/doc.JobPositionList'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/doc.Unauthorized'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/doc.Forbidden'
+      summary: Get job position list
+      tags:
+      - Job Position
+    post:
+      consumes:
+      - application/json
+      description: Create new job position
+      parameters:
+      - default: Bearer 99a5b39274f741ffb6de26111914dc7e
+        description: Bearer {access_token}
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - default: kompanitest2211491356-pg.zahironline.com
+        description: slug of company data
+        in: header
+        name: slug
+        required: true
+        type: string
+      - description: body
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/doc.JobPosition'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/doc.JobPosition'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/doc.BadRequest'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/doc.Unauthorized'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/doc.Forbidden'
+      summary: Create new job position
+      tags:
+      - Job Position
+  /api/hrm/v1/job_positions/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: Delete job position by id
+      parameters:
+      - description: Job Position ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - default: Bearer 99a5b39274f741ffb6de26111914dc7e
+        description: Bearer {access_token}
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - default: kompanitest2211491356-pg.zahironline.com
+        description: slug of company data
+        in: header
+        name: slug
+        required: true
+        type: string
+      - description: body
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/doc.JobPosition'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/doc.Deleted'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/doc.BadRequest'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/doc.Unauthorized'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/doc.Forbidden'
+      summary: Delete job position by id
+      tags:
+      - Job Position
+    get:
+      consumes:
+      - application/json
+      description: Get job position by id
+      parameters:
+      - description: Job Position ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - default: Bearer 99a5b39274f741ffb6de26111914dc7e
+        description: Bearer {access_token}
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - default: kompanitest2211491356-pg.zahironline.com
+        description: slug of company data
+        in: header
+        name: slug
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/doc.JobPosition'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/doc.Unauthorized'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/doc.Forbidden'
+      summary: Get job position by id
+      tags:
+      - Job Position
+    patch:
+      consumes:
+      - application/json
+      description: Update job position by id
+      parameters:
+      - description: Job Position ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - default: Bearer 99a5b39274f741ffb6de26111914dc7e
+        description: Bearer {access_token}
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - default: kompanitest2211491356-pg.zahironline.com
+        description: slug of company data
+        in: header
+        name: slug
+        required: true
+        type: string
+      - description: body
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/doc.JobPosition'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/doc.JobPosition'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/doc.BadRequest'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/doc.Unauthorized'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/doc.Forbidden'
+      summary: Update job position by id
+      tags:
+      - Job Position
+    put:
+      consumes:
+      - application/json
+      description: Update job position by id
+      parameters:
+      - description: Job Position ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - default: Bearer 99a5b39274f741ffb6de26111914dc7e
+        description: Bearer {access_token}
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - default: kompanitest2211491356-pg.zahironline.com
+        description: slug of company data
+        in: header
+        name: slug
+        required: true
+        type: string
+      - description: body
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/doc.JobPosition'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/doc.JobPosition'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/doc.BadRequest'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/doc.Unauthorized'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/doc.Forbidden'
+      summary: Update job position by id
+      tags:
+      - Job Position
+  /api/hrm/v1/non_taxable_incomes:
+    get:
+      consumes:
+      - application/json
+      description: Get non taxable income list
+      parameters:
+      - default: Bearer 99a5b39274f741ffb6de26111914dc7e
+        description: Bearer {access_token}
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - default: kompanitest2211491356-pg.zahironline.com
+        description: slug of company data
+        in: header
+        name: slug
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/doc.NonTaxableIncomeList'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/doc.Unauthorized'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/doc.Forbidden'
+      summary: Get non taxable income list
+      tags:
+      - Non Taxable Income
+    post:
+      consumes:
+      - application/json
+      description: Create new non taxable income
+      parameters:
+      - default: Bearer 99a5b39274f741ffb6de26111914dc7e
+        description: Bearer {access_token}
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - default: kompanitest2211491356-pg.zahironline.com
+        description: slug of company data
+        in: header
+        name: slug
+        required: true
+        type: string
+      - description: body
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/doc.NonTaxableIncome'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/doc.NonTaxableIncome'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/doc.BadRequest'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/doc.Unauthorized'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/doc.Forbidden'
+      summary: Create new non taxable income
+      tags:
+      - Non Taxable Income
+  /api/hrm/v1/non_taxable_incomes/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: Delete non taxable income by id
+      parameters:
+      - description: Non Taxable Income ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - default: Bearer 99a5b39274f741ffb6de26111914dc7e
+        description: Bearer {access_token}
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - default: kompanitest2211491356-pg.zahironline.com
+        description: slug of company data
+        in: header
+        name: slug
+        required: true
+        type: string
+      - description: body
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/doc.NonTaxableIncome'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/doc.Deleted'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/doc.BadRequest'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/doc.Unauthorized'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/doc.Forbidden'
+      summary: Delete non taxable income by id
+      tags:
+      - Non Taxable Income
+    get:
+      consumes:
+      - application/json
+      description: Get non taxable income by id
+      parameters:
+      - description: Non Taxable Income ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - default: Bearer 99a5b39274f741ffb6de26111914dc7e
+        description: Bearer {access_token}
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - default: kompanitest2211491356-pg.zahironline.com
+        description: slug of company data
+        in: header
+        name: slug
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/doc.NonTaxableIncome'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/doc.Unauthorized'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/doc.Forbidden'
+      summary: Get non taxable income by id
+      tags:
+      - Non Taxable Income
+    patch:
+      consumes:
+      - application/json
+      description: Update non taxable income by id
+      parameters:
+      - description: Non Taxable Income ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - default: Bearer 99a5b39274f741ffb6de26111914dc7e
+        description: Bearer {access_token}
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - default: kompanitest2211491356-pg.zahironline.com
+        description: slug of company data
+        in: header
+        name: slug
+        required: true
+        type: string
+      - description: body
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/doc.NonTaxableIncome'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/doc.NonTaxableIncome'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/doc.BadRequest'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/doc.Unauthorized'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/doc.Forbidden'
+      summary: Update non taxable income by id
+      tags:
+      - Non Taxable Income
+    put:
+      consumes:
+      - application/json
+      description: Update non taxable income by id
+      parameters:
+      - description: Non Taxable Income ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - default: Bearer 99a5b39274f741ffb6de26111914dc7e
+        description: Bearer {access_token}
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - default: kompanitest2211491356-pg.zahironline.com
+        description: slug of company data
+        in: header
+        name: slug
+        required: true
+        type: string
+      - description: body
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/doc.NonTaxableIncome'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/doc.NonTaxableIncome'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/doc.BadRequest'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/doc.Unauthorized'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/doc.Forbidden'
+      summary: Update non taxable income by id
+      tags:
+      - Non Taxable Income
+  /api/hrm/v1/payroll_components:
+    get:
+      consumes:
+      - application/json
+      description: Get payroll component list
+      parameters:
+      - default: Bearer 99a5b39274f741ffb6de26111914dc7e
+        description: Bearer {access_token}
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - default: kompanitest2211491356-pg.zahironline.com
+        description: slug of company data
+        in: header
+        name: slug
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/doc.PayrollComponentList'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/doc.Unauthorized'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/doc.Forbidden'
+      summary: Get payroll component list
+      tags:
+      - Payroll Component
+    post:
+      consumes:
+      - application/json
+      description: Create new payroll component
+      parameters:
+      - default: Bearer 99a5b39274f741ffb6de26111914dc7e
+        description: Bearer {access_token}
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - default: kompanitest2211491356-pg.zahironline.com
+        description: slug of company data
+        in: header
+        name: slug
+        required: true
+        type: string
+      - description: body
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/doc.PayrollComponent'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/doc.PayrollComponent'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/doc.BadRequest'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/doc.Unauthorized'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/doc.Forbidden'
+      summary: Create new payroll component
+      tags:
+      - Payroll Component
+  /api/hrm/v1/payroll_components/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: Delete payroll component by id
+      parameters:
+      - description: Payroll Component ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - default: Bearer 99a5b39274f741ffb6de26111914dc7e
+        description: Bearer {access_token}
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - default: kompanitest2211491356-pg.zahironline.com
+        description: slug of company data
+        in: header
+        name: slug
+        required: true
+        type: string
+      - description: body
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/doc.PayrollComponent'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/doc.Deleted'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/doc.BadRequest'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/doc.Unauthorized'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/doc.Forbidden'
+      summary: Delete payroll component by id
+      tags:
+      - Payroll Component
+    get:
+      consumes:
+      - application/json
+      description: Get payroll component by id
+      parameters:
+      - description: Payroll Component ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - default: Bearer 99a5b39274f741ffb6de26111914dc7e
+        description: Bearer {access_token}
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - default: kompanitest2211491356-pg.zahironline.com
+        description: slug of company data
+        in: header
+        name: slug
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/doc.PayrollComponent'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/doc.Unauthorized'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/doc.Forbidden'
+      summary: Get payroll component by id
+      tags:
+      - Payroll Component
+    patch:
+      consumes:
+      - application/json
+      description: Update payroll component by id
+      parameters:
+      - description: Payroll Component ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - default: Bearer 99a5b39274f741ffb6de26111914dc7e
+        description: Bearer {access_token}
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - default: kompanitest2211491356-pg.zahironline.com
+        description: slug of company data
+        in: header
+        name: slug
+        required: true
+        type: string
+      - description: body
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/doc.PayrollComponent'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/doc.PayrollComponent'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/doc.BadRequest'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/doc.Unauthorized'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/doc.Forbidden'
+      summary: Update payroll component by id
+      tags:
+      - Payroll Component
+    put:
+      consumes:
+      - application/json
+      description: Update payroll component by id
+      parameters:
+      - description: Payroll Component ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - default: Bearer 99a5b39274f741ffb6de26111914dc7e
+        description: Bearer {access_token}
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - default: kompanitest2211491356-pg.zahironline.com
+        description: slug of company data
+        in: header
+        name: slug
+        required: true
+        type: string
+      - description: body
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/doc.PayrollComponent'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/doc.PayrollComponent'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/doc.BadRequest'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/doc.Unauthorized'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/doc.Forbidden'
+      summary: Update payroll component by id
+      tags:
+      - Payroll Component
+  /api/hrm/v1/payrolls:
+    get:
+      consumes:
+      - application/json
+      description: Get payroll list
+      parameters:
+      - default: Bearer 99a5b39274f741ffb6de26111914dc7e
+        description: Bearer {access_token}
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - default: kompanitest2211491356-pg.zahironline.com
+        description: slug of company data
+        in: header
+        name: slug
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/doc.PayrollList'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/doc.Unauthorized'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/doc.Forbidden'
+      summary: Get payroll list
+      tags:
+      - Payroll
+    post:
+      consumes:
+      - application/json
+      description: Create new payroll
+      parameters:
+      - default: Bearer 99a5b39274f741ffb6de26111914dc7e
+        description: Bearer {access_token}
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - default: kompanitest2211491356-pg.zahironline.com
+        description: slug of company data
+        in: header
+        name: slug
+        required: true
+        type: string
+      - description: body
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/doc.Payroll'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/doc.Payroll'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/doc.BadRequest'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/doc.Unauthorized'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/doc.Forbidden'
+      summary: Create new payroll
+      tags:
+      - Payroll
+  /api/hrm/v1/payrolls/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: Delete payroll by id
+      parameters:
+      - description: Payroll ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - default: Bearer 99a5b39274f741ffb6de26111914dc7e
+        description: Bearer {access_token}
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - default: kompanitest2211491356-pg.zahironline.com
+        description: slug of company data
+        in: header
+        name: slug
+        required: true
+        type: string
+      - description: body
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/doc.Payroll'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/doc.Deleted'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/doc.BadRequest'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/doc.Unauthorized'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/doc.Forbidden'
+      summary: Delete payroll by id
+      tags:
+      - Payroll
+    get:
+      consumes:
+      - application/json
+      description: Get payroll by id
+      parameters:
+      - description: Payroll ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - default: Bearer 99a5b39274f741ffb6de26111914dc7e
+        description: Bearer {access_token}
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - default: kompanitest2211491356-pg.zahironline.com
+        description: slug of company data
+        in: header
+        name: slug
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/doc.Payroll'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/doc.Unauthorized'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/doc.Forbidden'
+      summary: Get payroll by id
+      tags:
+      - Payroll
+    patch:
+      consumes:
+      - application/json
+      description: Update payroll by id
+      parameters:
+      - description: Payroll ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - default: Bearer 99a5b39274f741ffb6de26111914dc7e
+        description: Bearer {access_token}
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - default: kompanitest2211491356-pg.zahironline.com
+        description: slug of company data
+        in: header
+        name: slug
+        required: true
+        type: string
+      - description: body
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/doc.Payroll'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/doc.Payroll'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/doc.BadRequest'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/doc.Unauthorized'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/doc.Forbidden'
+      summary: Update payroll by id
+      tags:
+      - Payroll
+    put:
+      consumes:
+      - application/json
+      description: Update payroll by id
+      parameters:
+      - description: Payroll ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - default: Bearer 99a5b39274f741ffb6de26111914dc7e
+        description: Bearer {access_token}
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - default: kompanitest2211491356-pg.zahironline.com
+        description: slug of company data
+        in: header
+        name: slug
+        required: true
+        type: string
+      - description: body
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/doc.Payroll'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/doc.Payroll'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/doc.BadRequest'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/doc.Unauthorized'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/doc.Forbidden'
+      summary: Update payroll by id
+      tags:
+      - Payroll
+  /api/hrm/v1/time_schedules:
+    get:
+      consumes:
+      - application/json
+      description: Get employee list
+      parameters:
+      - default: Bearer 99a5b39274f741ffb6de26111914dc7e
+        description: Bearer {access_token}
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - default: kompanitest2211491356-pg.zahironline.com
+        description: slug of company data
+        in: header
+        name: slug
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/doc.TimeScheduleList'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/doc.Unauthorized'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/doc.Forbidden'
+      summary: Get employee list
+      tags:
+      - Time Schedule
+    post:
+      consumes:
+      - application/json
+      description: Create new employee
+      parameters:
+      - default: Bearer 99a5b39274f741ffb6de26111914dc7e
+        description: Bearer {access_token}
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - default: kompanitest2211491356-pg.zahironline.com
+        description: slug of company data
+        in: header
+        name: slug
+        required: true
+        type: string
+      - description: body
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/doc.TimeSchedule'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/doc.TimeSchedule'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/doc.BadRequest'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/doc.Unauthorized'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/doc.Forbidden'
+      summary: Create new employee
+      tags:
+      - Time Schedule
+  /api/hrm/v1/time_schedules/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: Delete time schedule by id
+      parameters:
+      - description: Time Schedule ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - default: Bearer 99a5b39274f741ffb6de26111914dc7e
+        description: Bearer {access_token}
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - default: kompanitest2211491356-pg.zahironline.com
+        description: slug of company data
+        in: header
+        name: slug
+        required: true
+        type: string
+      - description: body
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/doc.TimeSchedule'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/doc.Deleted'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/doc.BadRequest'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/doc.Unauthorized'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/doc.Forbidden'
+      summary: Delete time schedule by id
+      tags:
+      - Time Schedule
+    get:
+      consumes:
+      - application/json
+      description: Get time schedule by id
+      parameters:
+      - description: Time Schedule ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - default: Bearer 99a5b39274f741ffb6de26111914dc7e
+        description: Bearer {access_token}
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - default: kompanitest2211491356-pg.zahironline.com
+        description: slug of company data
+        in: header
+        name: slug
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/doc.TimeSchedule'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/doc.Unauthorized'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/doc.Forbidden'
+      summary: Get time schedule by id
+      tags:
+      - Time Schedule
+    patch:
+      consumes:
+      - application/json
+      description: Update time schedule by id
+      parameters:
+      - description: Time Schedule ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - default: Bearer 99a5b39274f741ffb6de26111914dc7e
+        description: Bearer {access_token}
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - default: kompanitest2211491356-pg.zahironline.com
+        description: slug of company data
+        in: header
+        name: slug
+        required: true
+        type: string
+      - description: body
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/doc.TimeSchedule'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/doc.TimeSchedule'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/doc.BadRequest'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/doc.Unauthorized'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/doc.Forbidden'
+      summary: Update time schedule by id
+      tags:
+      - Time Schedule
+    put:
+      consumes:
+      - application/json
+      description: Update time schedule by id
+      parameters:
+      - description: Time Schedule ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - default: Bearer 99a5b39274f741ffb6de26111914dc7e
+        description: Bearer {access_token}
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - default: kompanitest2211491356-pg.zahironline.com
+        description: slug of company data
+        in: header
+        name: slug
+        required: true
+        type: string
+      - description: body
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/doc.TimeSchedule'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/doc.TimeSchedule'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/doc.BadRequest'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/doc.Unauthorized'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/doc.Forbidden'
+      summary: Update time schedule by id
+      tags:
+      - Time Schedule
+  /api/hrm/v1/work_insurances:
+    get:
+      consumes:
+      - application/json
+      description: Get employee list
+      parameters:
+      - default: Bearer 99a5b39274f741ffb6de26111914dc7e
+        description: Bearer {access_token}
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - default: kompanitest2211491356-pg.zahironline.com
+        description: slug of company data
+        in: header
+        name: slug
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/doc.EmployeeList'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/doc.Unauthorized'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/doc.Forbidden'
+      summary: Get employee list
+      tags:
+      - Employee
+    post:
+      consumes:
+      - application/json
+      description: Create new employee
+      parameters:
+      - default: Bearer 99a5b39274f741ffb6de26111914dc7e
+        description: Bearer {access_token}
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - default: kompanitest2211491356-pg.zahironline.com
+        description: slug of company data
+        in: header
+        name: slug
+        required: true
+        type: string
+      - description: body
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/doc.Employee'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/doc.Employee'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/doc.BadRequest'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/doc.Unauthorized'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/doc.Forbidden'
+      summary: Create new employee
+      tags:
+      - Employee
+  /api/hrm/v1/work_insurances/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: Delete employee by id
+      parameters:
+      - description: Employee ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - default: Bearer 99a5b39274f741ffb6de26111914dc7e
+        description: Bearer {access_token}
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - default: kompanitest2211491356-pg.zahironline.com
+        description: slug of company data
+        in: header
+        name: slug
+        required: true
+        type: string
+      - description: body
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/doc.Employee'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/doc.Deleted'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/doc.BadRequest'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/doc.Unauthorized'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/doc.Forbidden'
+      summary: Delete employee by id
+      tags:
+      - Employee
+    get:
+      consumes:
+      - application/json
+      description: Get employee by id
+      parameters:
+      - description: Employee ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - default: Bearer 99a5b39274f741ffb6de26111914dc7e
+        description: Bearer {access_token}
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - default: kompanitest2211491356-pg.zahironline.com
+        description: slug of company data
+        in: header
+        name: slug
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/doc.Employee'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/doc.Unauthorized'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/doc.Forbidden'
+      summary: Get employee by id
+      tags:
+      - Employee
+    patch:
+      consumes:
+      - application/json
+      description: Update employee by id
+      parameters:
+      - description: Employee ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - default: Bearer 99a5b39274f741ffb6de26111914dc7e
+        description: Bearer {access_token}
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - default: kompanitest2211491356-pg.zahironline.com
+        description: slug of company data
+        in: header
+        name: slug
+        required: true
+        type: string
+      - description: body
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/doc.Employee'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/doc.Employee'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/doc.BadRequest'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/doc.Unauthorized'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/doc.Forbidden'
+      summary: Update employee by id
+      tags:
+      - Employee
+    put:
+      consumes:
+      - application/json
+      description: Update employee by id
+      parameters:
+      - description: Employee ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - default: Bearer 99a5b39274f741ffb6de26111914dc7e
+        description: Bearer {access_token}
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - default: kompanitest2211491356-pg.zahironline.com
+        description: slug of company data
+        in: header
+        name: slug
+        required: true
+        type: string
+      - description: body
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/doc.Employee'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/doc.Employee'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/doc.BadRequest'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/doc.Unauthorized'
+        "403":
+          description: Forbidden
+          schema:
+            $ref: '#/definitions/doc.Forbidden'
+      summary: Update employee by id
+      tags:
+      - Employee
+schemes:
+- http
+swagger: "2.0"
