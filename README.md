@@ -1,65 +1,51 @@
-# Zahir HRM API
+# API Super Islamic App (Indonesia & Arabic Only)
 
-## Getting Started
-1. Make sure you have [Go](https://go.dev) installed.
-2. Clone the repo
-```bash
-git clone https://bitbucket.org/zahironline/zahirhrm-api.git
-```
-3. Go to the directory and run go mod tidy to add missing requirements and to drop unused requirements
-```bash
-cd zahirhrm-api && go mod tidy
-```
-3. Setup your .env file
-```bash
-cp .env-example .env && vi .env
-```
-4. Start
+This api was created to handle super Islamic apps which include :
+
+- [x] Al-Qur'an
+- [x] Hadits 9 Imam (Muslim Bukhari, Tirmidzi, Nasai, Abu Daud, Ibnu Majah, Ahmad, Darimi, Malik)
+- [x] Dzikir Pagi/Petang
+- [x] Doa Harian
+
+## Installation
+
+make sure golang is installed
+
 ```bash
 go run main.go
 ```
 
-## Generate / Update Swagger
-1. Make sure you have added GOPATH/bin to the PATH environment.
-2. Compile and install [Swag](https://github.com/swaggo/swag) packages and dependencies.
+## Usage
+1. Call Migration
 ```bash
-go install github.com/swaggo/swag/cmd/swag@latest
+GET {{localhost}}/api/migration
 ```
-3. Add comments to your API source code, [See Declarative Comments Format](https://github.com/swaggo/swag#declarative-comments-format).
-4. Run the [Swag](https://github.com/swaggo/swag) in your Go project root folder which contains `main.go` file, [Swag](https://github.com/swaggo/swag) will parse comments and generate required files(`docs` folder and `docs/doc.go`).
+2. Call Seeder Data
 ```bash
-swag init --outputTypes json
+GET {{localhost}}/api/seed/surah
 ```
-5. Start
 ```bash
-go run main.go
+GET {{localhost}}/api/seed/ayat
 ```
-6. Open http://localhost:4040/docs/ in your browser, you can see Swagger 2.0 Api documents.
+```bash
+GET {{localhost}}/api/seed/hadits
+```
+```bash
+GET {{localhost}}/api/seed/dzikir
+```
+```bash
+GET {{localhost}}/api/seed/doa
+```
+## Contributing
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
-## Test
-1. Test all
-```bash
-go test ./...
-```
-2. Test all with verbose output that lists all of the tests and their results.
-```bash
-go test ./... -v
-```
-3. Test all with benchmark.
-```bash
-go test ./... -bench=.
-```
+Please make sure to update tests as appropriate.
 
-## Build for production
-1. Compile packages and dependencies
-```bash
-go build -o zahirhrm-api main.go
-```
-2. Setup .env file for production
-```bash
-cp .env-example .env && vi .env
-```
-3. Run executable file with systemd, supervisor, pm2 or other process manager
-```bash
-./zahirhrm-api
-```
+## License
+
+
+## Data Source 
+1. https://github.com/muslim-dev/dzikrr
+2. https://doa-doa-api-ahmadramadhan.fly.dev/
+3. https://github.com/gadingnst/hadith-api
+4. https://github.com/bachors/Al-Quran-ID-API
