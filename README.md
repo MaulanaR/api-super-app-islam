@@ -11,7 +11,11 @@ This api was created to handle super Islamic apps which include :
 
 make sure golang is installed
 
-```bash
+```go
+go mod tidy
+```
+
+```go
 go run main.go
 ```
 
