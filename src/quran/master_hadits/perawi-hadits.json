@@ -1,0 +1,37 @@
+[
+    {
+        "kode" : "abu-daud",
+        "perawi" : "Abu Daud"
+    },
+    {
+        "kode" : "ahmad",
+        "perawi" : "ahmad"
+    },
+    {
+        "kode" : "bukhari",
+        "perawi" : "bukhari"
+    },{
+        "kode" : "darimi",
+        "perawi" : "darimi"
+    },
+    {
+        "kode" : "ibnu-majah",
+        "perawi" : "ibnu-majah"
+    },
+    {
+        "kode" : "malik",
+        "perawi" : "malik"
+    },
+    {
+        "kode" : "muslim",
+        "perawi" : "muslim"
+    },
+    {
+        "kode" : "nasai",
+        "perawi" : "nasai"
+    },
+    {
+        "kode" : "tirmidzi",
+        "perawi" : "tirmidzi"
+    }
+]
